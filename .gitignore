@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+airflow/logs
+spark/notebooks/metastore_db
+spark/notebooks/spark-warehouse
+spark/**/*.log

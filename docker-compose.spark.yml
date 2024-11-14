@@ -1,0 +1,13 @@
+services:
+  notebook:
+      image: jupyter/pyspark-notebook:spark-3.5.0
+      ports:
+        - "8888:8888"
+      volumes:
+        - ./spark/jupyter_notebook_config.py:/home/jovyan/.jupyter/jupyter_notebook_config.py
+        - ./spark/notebooks:/home/jovyan/notebooks
+        # - ./build:/home/jovyan/openlineage
+      depends_on:
+        - marquez-api
+      environment:
+        - JUPYTER_TOKEN=''
